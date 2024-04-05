@@ -1,0 +1,6 @@
+gender,SeniorCitizen,Dependents,MultipleLines,OnlineBackup,DeviceProtection,TechSupport,Contract,MonthlyCharges,TotalCharges
+Female,0,No,No,Yes,Yes,Yes,Month-to-month,80.85,660.85
+Male,1,Yes,Yes,No,Yes,Yes,Two year,100.0,1500.0
+Female,0,No,No,No,No,No,One year,40.0,250.0
+Male,0,No,Yes,Yes,Yes,Yes,Month-to-month,70.0,500.0
+Female,1,No,No,Yes,Yes,No,Month-to-month,85.0,450.0
