@@ -1,0 +1,33 @@
+name: Deploy to AWS ECS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build, push and Release a Docker image
+        env:
+          ECR_REGISTRY: ${{ secrets.AWS_ECR_REGISTRY }}
+        run: |
+          docker build -t $ECR_REGISTRY:latest .
+          docker push $ECR_REGISTRY:latest
+
+      - name: Deploy to AWS ECS
+        env:
+          ECS_CLUSTER: ${{ secrets.AWS_ECS_CLUSTER }}
+          ECS_SERVICE: ${{ secrets.AWS_ECS_SERVICE }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+        run: |
+          aws ecs update-service --cluster $ECS_CLUSTER --service $ECS_SERVICE --force-new-deployment --region $AWS_REGION
