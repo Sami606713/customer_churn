@@ -2,3 +2,5 @@ pandas
 numpy
 streamlit
 scikit-learn
+pymysql
+python-dotenv

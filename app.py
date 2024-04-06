@@ -101,7 +101,7 @@ def main():
     with col3:
         pass
     
-
+    # database_connection()
     # set the input layout
     input_layout()
 
