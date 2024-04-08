@@ -5,7 +5,6 @@ __pycache__/
 churn_env/
 # C extensions
 *.so
-
 # Distribution / packaging
 .Python
 build/
