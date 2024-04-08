@@ -103,6 +103,7 @@ def main():
     
     # database_connection()
     # set the input layout
+    
     input_layout()
 
 if __name__=="__main__":
